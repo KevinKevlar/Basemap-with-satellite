@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+
+  <title>Conagua - geoportal -</title>
+  <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">    
+  <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+
+  <style type="text/css">
+   html {
+     overflow: hidden;
+    }
+   div#encabezado {
+     position: absolute;
+     top:0; 
+	 left: 0;
+	 height:10%;
+     width:100%;
+     background-color:#FFFFFF;
+    }
+   div#columna_izquierda {
+     position: absolute;
+     top:10%; left: 0;
+	    height: 90%;
+     width:20%;
+     background-color:#E1E1E1;
+    }
+   div#columna_derecha {
+     position: absolute;
+     top:10%; right: 0;
+	    bottom: 0;
+     width: 80%;
+     background-color:#C7C7C7;
+    }
+	
+	#map{
+      padding:0;
+    }
+   </style>
+   
+  <script src="http://js.arcgis.com/3.14/"></script>
+  <script> 
+    var map;
+    require([
+      "esri/map", "esri/dijit/BasemapGallery", "esri/arcgis/utils",
+      "dojo/parser",
+
+      "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+      "dojo/domReady!"
+    ], function(
+      Map, BasemapGallery, arcgisUtils,
+      parser
+    ) {
+      parser.parse();
+
+      map = new Map("map", {
+        basemap: "satellite",
+        center: [-101.630833333333, 22.5],
+        zoom: 5
+      });
+
+      //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
+      
+    });
+  </script> 
+
+   
+   </head>
+ <body>
+ <div id="encabezado"> 
+   <img src="Logo_Conagua.png" width="300" height="88" alt="logo_conagua" />   </div> 
+ 
+ <div id="columna_izquierda"> 
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis  nulla et risus. In eleifend sapien a neque. Etiam fermentum. Sed  dapibus suscipit diam. Praesent non nisi ac leo congue vestibulum.  Mauris ac orci eu nisl dictum ultrices. Morbi blandit dolor vitae  sapien. Vivamus in neque. Integer sit amet mi. Curabitur ipsum lectus,  ultricies sit amet, bibendum a, sodales vitae, massa. Quisque metus.  Sed blandit hendrerit urna. Aenean eu nulla. Praesent vulputate dui id  lacus. Nunc vel odio. Nulla eleifend rutrum nulla. </p>
+ </div> 
+   
+ <div id="columna_derecha"> 
+  <div data-dojo-type="dijit/layout/BorderContainer" 
+       data-dojo-props="design:'headline', gutters:false" 
+       style="width:100%;height:100%;margin:0;">
+
+    <div id="map" 
+         data-dojo-type="dijit/layout/ContentPane" 
+         data-dojo-props="region:'center'" 
+         style="padding:0;">
+
+      
+
+    </div>
+  </div>
+</div>
+   
+</body>
+ </html>
